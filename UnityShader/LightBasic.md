@@ -80,6 +80,7 @@ Shader "Custom/Test641"
 # 漫反射逐像素光照模型
 
 本质是上就是将计算光渣模型的过程转移到片元着色器中。
+
 ![](/assets/diffuse-pixelLevel.jpg)
 
 ```shaderlab

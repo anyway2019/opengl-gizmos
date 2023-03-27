@@ -10,7 +10,6 @@
 # 漫反射光照模型
 
 $$c_diffuse = c_light · M_diffuse · max(0,n·l);$$
-//max(0,n·l)=>saturate(dot(worldNormal,worldLight)
 
 ## 逐顶点漫反射光照模型
 
@@ -83,7 +82,7 @@ Shader "Custom/Test641"
 本质是上就是将计算光渣模型的过程转移到片元着色器中。
 ![](/assets/diffuse-pixelLevel.jpg)
 
-```
+```shaderlab
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
 Shader "Custom/Test642"
@@ -154,7 +153,7 @@ Shader "Custom/Test642"
 
 ![](/assets/half-lambert.jpg)
 
-```
+```shaderlab
   // other code above
   //计算光照强度
   fixed3 diffuse = _LightColor0.rgb * _Diffuse.rgb * (dot(normal, lightDir)*0.5f+0.5f);
@@ -168,7 +167,7 @@ Shader "Custom/Test642"
 
 ![](/assets/specular-vertexLevel.jpg)
 
-```
+```shaderlab
 Shader "Custom/Test644"
 {
     Properties
@@ -247,7 +246,7 @@ Shader "Custom/Test644"
 
 ![](/assets/specular-pixelLevel.jpg)
 
-```
+```shaderlab
 Shader "Custom/Test645"
 {
     Properties
@@ -328,7 +327,7 @@ Shader "Custom/Test645"
 
 # Blinn-Phong 光照模型
 
-```
+```shaderlab
 Shader "Custom/Test646"
 {
     Properties
